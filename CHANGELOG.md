@@ -8,7 +8,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Changed
-- Updated authentication header from `Authorization: Bearer` to `X-API-Key` for better API key support
+- Complete authentication header update across all methods for consistent X-API-Key usage
+
+## [1.1.1] - 2024-12-19
+
+### Changed
+- **Authentication**: Updated all authentication headers from `Authorization: Bearer` to `X-API-Key` for complete API key compatibility
+- **Consistency**: All HTTP methods now use the same `X-API-Key` header format
+- **Methods Updated**: `makeRequest()`, `makeFileRequest()`, and `downloadFileContent()` all use consistent authentication
 
 ## [1.1.0] - 2024-12-19
 

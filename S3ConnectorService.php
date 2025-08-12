@@ -52,7 +52,7 @@ class S3ConnectorService
         $url = rtrim($this->baseUrl, '/') . '/' . ltrim($endpoint, '/');
         
         $defaultHeaders = [
-            'Authorization' => 'Bearer ' . $this->apiKey,
+            'X-API-Key' => $this->apiKey,
             'Accept' => 'application/json',
             'Content-Type' => 'application/json',
         ];
@@ -107,7 +107,7 @@ class S3ConnectorService
         $url = rtrim($this->baseUrl, '/') . '/' . ltrim($endpoint, '/');
         
         $headers = [
-            'Authorization' => 'Bearer ' . $this->apiKey,
+            'X-API-Key' => $this->apiKey,
             'Accept' => 'application/json',
         ];
 
@@ -200,7 +200,7 @@ class S3ConnectorService
         try {
             $response = Http::timeout($this->timeout)
                 ->withHeaders([
-                    'Authorization' => 'Bearer ' . $this->apiKey,
+                    'X-API-Key' => $this->apiKey,
                     'Accept' => '*/*',
                 ])
                 ->post($url, ['key' => $key]);

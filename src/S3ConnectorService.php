@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Storage;
  * from any Laravel project. Just add S3_CONNECTOR_API_KEY to your .env file.
  * 
  * @package DhananjayVaidya\S3Connector
- * @version 1.1.0
+ * @version 1.1.1
  * @author Dhananjay Vaidya
  */
 class S3ConnectorService
@@ -108,7 +108,7 @@ class S3ConnectorService
         $url = rtrim($this->baseUrl, '/') . '/' . ltrim($endpoint, '/');
         
         $headers = [
-            'Authorization' => 'Bearer ' . $this->apiKey,
+            'X-API-Key' => $this->apiKey,
             'Accept' => 'application/json',
         ];
 
@@ -201,7 +201,7 @@ class S3ConnectorService
         try {
             $response = Http::timeout($this->timeout)
                 ->withHeaders([
-                    'Authorization' => 'Bearer ' . $this->apiKey,
+                    'X-API-Key' => $this->apiKey,
                     'Accept' => '*/*',
                 ])
                 ->post($url, ['key' => $key]);
@@ -314,7 +314,7 @@ class S3ConnectorService
     {
         return [
             'service_name' => 'S3 Connector Service',
-            'version' => '1.1.0',
+            'version' => '1.1.1',
             'base_url' => $this->baseUrl,
             'api_key_prefix' => substr($this->apiKey, 0, 10) . '...',
             'timeout' => $this->timeout,
