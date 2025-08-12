@@ -1,6 +1,7 @@
 {
     "name": "dhananjay-vaidya/s3-connector",
     "description": "A lightweight Laravel service for easy integration with the S3 Connector API. Provides simple interface to interact with S3 storage through the S3 Connector API without direct AWS SDK integration.",
+    "version": "1.1.0",
     "type": "library",
     "license": "MIT",
     "authors": [

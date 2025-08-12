@@ -7,6 +7,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+- Updated authentication header from `Authorization: Bearer` to `X-API-Key` for better API key support
+
+## [1.1.0] - 2024-12-19
+
+### Changed
+- **Authentication**: Updated authentication header from `Authorization: Bearer` to `X-API-Key` for improved API key compatibility
+- **Header Format**: Changed from `Authorization: Bearer {api_key}` to `X-API-Key: {api_key}`
+
 ### Added
 - Initial package structure
 - S3ConnectorService class with complete S3 operations
